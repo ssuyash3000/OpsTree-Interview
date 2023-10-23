@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import AddCar from "./Components/AddCar";
-import Navbar from "./Components/Navbar";
+
 import CarList from "./Components/CarList";
 
 function App() {
@@ -9,17 +9,17 @@ function App() {
   let [page, setPage] = useState("addform");
   const handleAddCar = (car) => {
     let curr = carList.filter(({ carname, model, qty }) => {
-      if (carname === car.carname && model === car.model) {
-        return { carname, model, qty };
-      }
+      return carname === car.carname && model === car.model;
+      //return { carname, model, qty };
+      //}
     });
     if (curr.length === 0) setCarList([...carList, car]);
     else {
       setCarList((carList) => {
         let newList = carList.filter(({ carname, model, qty }) => {
-          if (carname !== car.carname && model !== car.model) {
-            return { carname, model, qty };
-          }
+          return carname !== car.carname && model !== car.model;
+          //   return { carname, model, qty };
+          // }
         });
         curr[0].qty = Number(curr[0].qty) + Number(car.qty);
         return [...newList, curr[0]];

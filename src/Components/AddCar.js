@@ -21,7 +21,13 @@ export default function AddCar({ handleAddCar }) {
   return (
     <div className="AddCar">
       <h1>Add Car</h1>
-      <form onSubmit={addCar}>
+      <form
+        onSubmit={addCar}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}>
         <label>Enter Car Name</label>
         <input
           type="text"

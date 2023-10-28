@@ -1,4 +1,4 @@
-Interview - 1
+**Interview - 1**
 Task - 
 Step 1:
 Create a component to add a car into a list of Cars.
@@ -10,7 +10,7 @@ Create another component which will display the list of cars.
 Step 3:
 On adding the car of same Brand and Model, quantity should be added in existing Car Object instead of creating a new Car Object in the list
 
-Interview - 2
+**Interview - 2**
 Task - Implement 2 Input tags in different component, 
 When the number input is done is input tag of first component, value of input tag in 2nd component should get updated 
 in sync with the value/2 of value input in 1st tag,
@@ -49,7 +49,8 @@ function sumofobj(obj) {
 let value = sumofobj(obj);
 console.log(value);
 
-Interview - 3 
+**Interview - 3**
+Task - 
 Make change in the project of Interview - 1
 Make change in carList component such that it renders the car list in tabular format 
 Implement a sell car page where selection of cars to be sold can be done using the dropdown menu 

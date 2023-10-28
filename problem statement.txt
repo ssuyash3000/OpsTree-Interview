@@ -1,3 +1,5 @@
+Interview - 1
+Task - 
 Step 1:
 Create a component to add a car into a list of Cars.
 Fields that are required as attributes of a car are  Name, Model and Quantity.
@@ -7,3 +9,18 @@ Create another component which will display the list of cars.
 
 Step 3:
 On adding the car of same Brand and Model, quantity should be added in existing Car Object instead of creating a new Car Object in the list
+
+Interview - 2
+Task - Implement 2 Input tags in different component, 
+When the number input is done is input tag of first component, value of input tag in 2nd component should get updated 
+in sync with the value/2 of value input in 1st tag,
+and similarly when input to be done in 2nd tag, value in first should update with value * 2 in sync.
+
+Interview - 3 
+Make change in the project of Interview - 1
+Make change in carList component such that it renders the car list in tabular format 
+Implement a sell car page where selection of cars to be sold can be done using the dropdown menu 
+and number of car sold be input in input tag.
+When user hits sell car button number of car should get updated in the car list 
+and if the number car input by the user exceeds the number of car in the car list, then there should be a message displayed that 
+That much car is not in the inventory

@@ -15,11 +15,11 @@ function App() {
       //return { carname, model, qty };
       //}
     });
-    if (curr.length === 0) setCarList([...carList, car]);
+    if (curr.length === 0) setCarList((prevCarLsit) => [...prevCarLsit, car]);
     else {
       setCarList((carList) => {
         let newList = carList.filter(({ carname, model, qty }) => {
-          return carname !== car.carname && model !== car.model;
+          return carname !== car.carname || model !== car.model;
           //   return { carname, model, qty };
           // }
         });

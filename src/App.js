@@ -3,9 +3,11 @@ import "./App.css";
 import AddCar from "./Components/AddCar";
 
 import CarList from "./Components/CarList";
+import SellCar from "./Components/SellCar";
 
 function App() {
   let [carList, setCarList] = useState([]);
+  let [extraMessage, setExtraMessage] = useState("");
   let [page, setPage] = useState("addform");
   const handleAddCar = (car) => {
     let curr = carList.filter(({ carname, model, qty }) => {
@@ -30,12 +32,26 @@ function App() {
 
   return (
     <div className="App">
+      <div id="extramessage">{extraMessage}</div>
       <button
         onClick={() => {
           page === "addform" ? setPage("carList") : setPage("addform");
         }}>
         {page === "addform" ? "Take me to Car list" : "Take me to add form"}
       </button>
+      <button
+        onClick={() => {
+          page === "sellcar" ? setPage("carList") : setPage("sellcar");
+        }}>
+        {page === "sellcar" ? "Take me to CarList" : "Take me to Sell Car Page"}
+      </button>
+      {page === "sellcar" && (
+        <SellCar
+          carList={carList}
+          setCarList={setCarList}
+          setExtraMessage={setExtraMessage}
+        />
+      )}
       {page === "addform" && <AddCar handleAddCar={handleAddCar} />}
       {page === "carList" && <CarList carList={carList} />}
     </div>

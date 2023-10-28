@@ -1,29 +1,30 @@
 export default function CarList({ carList }) {
   return (
-    <div className="carList">
+    <div
+      className="carList"
+      style={{ display: "flex", flexDirection: "column" }}>
       <h1>CarList</h1>
-      <ul
-        style={{
-          listStyle: "none",
-          display: "flex",
-          justifyContent: "space-evenly",
-        }}>
-        {carList.map((currCar) => (
-          <li
-            key={currCar.carname}
-            style={{
-              border: "1px solid black",
-              display: "flex",
-              flexDirection: "column",
-              alignContent: "space-evenly",
-              width: "fit-content",
-            }}>
-            <div>Name: {currCar.carname}</div>
-            <div>Model: {currCar.model}</div>
-            Quantity: {currCar.qty}
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Model</th>
+            <th>Quntity</th>
+          </tr>
+        </thead>
+        <tbody>
+          {carList.map((currCar, index) => (
+            <tr>
+              <td>{index + 1}</td>
+              <td>{currCar.carname}</td>
+              <td>{currCar.model}</td>
+              <td>{currCar.qty}</td>
+            </tr>
+          ))}
+        </tbody>
+        <tfoot></tfoot>
+      </table>
     </div>
   );
 }

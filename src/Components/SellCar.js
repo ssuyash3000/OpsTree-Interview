@@ -20,6 +20,7 @@ export default function SellCar({ carList, setCarList, setExtraMessage }) {
         setExtraMessage("That much cars are not available");
         setTimeout(() => setExtraMessage(""), 2000);
       }
+      return "";
     });
     if (carexist) {
       setCarList((prevCarList) => {
@@ -41,7 +42,6 @@ export default function SellCar({ carList, setCarList, setExtraMessage }) {
         return [...newCarList];
       });
     }
-  
   }
   function handlecarInput(e) {
     console.log(e);

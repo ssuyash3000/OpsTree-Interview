@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+**Interview - 1**
+Task - 
+Step 1:
+Create a component to add a car into a list of Cars.
+Fields that are required as attributes of a car are  Name, Model and Quantity.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Step 2:
+Create another component which will display the list of cars.
 
-## Available Scripts
+Step 3:
+On adding the car of same Brand and Model, quantity should be added in existing Car Object instead of creating a new Car Object in the list
 
-In the project directory, you can run:
+**Interview - 2**
+Task - Implement 2 Input tags in different component, 
+When the number input is done is input tag of first component, value of input tag in 2nd component should get updated 
+in sync with the value/2 of value input in 1st tag,
+and similarly when input to be done in 2nd tag, value in first should update with value * 2 in sync.
+Then some baisc react question 
+Like what is useEffect redux 
 
-### `npm start`
+and then a javascript coding question similar to 
+Flatten an array problem statement 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I was supposed to get the sum of the numbers out the following object 
+let obj = { a: { x: [1, 2, 3, 4, 5, { m: [1, 2, 3, 4, 5, 8] }] } };
+Solved this problem too 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Following is the code that I wrote 
+let obj = { a: { x: [1, 2, 3, 4, 5, { m: [1, 2, 3, 4, 5, 8] }] } };
+function sumofobj(obj) {
+  let sum = 0;
+  if (Array.isArray(obj)) {
+    for (let i = 0; i < obj.length; i++) {
+      if (typeof obj[i] === "number") {
+        sum += obj[i];
+      } else {
+        sum += sumofobj(obj[i]);
+      }
+    }
+  } else {
+    let keys = Object.keys(obj);
+    for (let i = 0; i < keys.length; i++) {
+      sum += sumofobj(obj[keys[i]]);
+    }
+  }
+  return sum;
+}
 
-### `npm test`
+let value = sumofobj(obj);
+console.log(value);
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Interview - 3**
+Task - 
+Make change in the project of Interview - 1
+Make change in carList component such that it renders the car list in tabular format 
+Implement a sell car page where selection of cars to be sold can be done using the dropdown menu 
+and number of car sold be input in input tag.
+When user hits sell car button number of car should get updated in the car list 
+and if the number car input by the user exceeds the number of car in the car list, then there should be a message displayed that 
+That much car is not in the inventory

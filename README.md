@@ -26,6 +26,7 @@ let obj = { a: { x: [1, 2, 3, 4, 5, { m: [1, 2, 3, 4, 5, 8] }] } };
 Solved this problem too 
 
 Following is the code that I wrote 
+```
 let obj = { a: { x: [1, 2, 3, 4, 5, { m: [1, 2, 3, 4, 5, 8] }] } };
 function sumofobj(obj) {
   let sum = 0;
@@ -49,6 +50,7 @@ function sumofobj(obj) {
 let value = sumofobj(obj);
 console.log(value);
 
+```
 **Interview - 3**
 Task - 
 Make change in the project of Interview - 1
